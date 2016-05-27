@@ -1,0 +1,13 @@
+#include <iostream> // directivas preprocesador
+
+using namespace std; // usando namespace o espacios nombre.
+
+int main() // funcion principal de nuestro programa
+{
+
+cout <<"Hola Mundo" <<endl; // nuestro primer mensaje de Hola mundo
+
+
+return 0; // tiene que finalizar con 0 porque sino es error.
+}
+
