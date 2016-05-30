@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+/*
+El operador ternario ( ? )  nos sirve para evaluar una condicion de tipo boolean
+su sintaxis es la siguient (funion_a_evaluar) ? condicion1 : condicion2; 
+en el caso que en la funcion a a evaluar el resultado sea verdadero se realiza la condicion1 en caso contrario
+se lleva a cabo la condicion2 un ejemplo mas claro es:
+int a = 2; 
+int b = 4;
+
+( a<b) ? return a : return b; 
+// salida seria A porque a es menor a b entonces se lleva a cabo la condicion1.
+
+
+*/
+int main()
+{
+
+int a = 4, b = 5;
+
+(a < b) ? cout <<"A es menor que B" : cout <<" B es menor que a";
+
+// salida seria 
+// A es menor que B
+
+
+
+
+return 0;
+}//FIN DE CODIGO.
