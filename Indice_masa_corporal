@@ -1,0 +1,88 @@
+#include <iostream>
+#include <iomanip> //para usar setprecision.
+using namespace std;
+/****************************
+*  Creado por:              *
+*  Rafael Marroquin         *
+*                           *
+*****************************/
+//programa para conocer el indice de masa corporal.
+//BMI o indice de masa corporal se calcula
+// (pesolibras x 703 ) / (alturapulgadas x alturapulgadas);
+
+//crearemos una funcion para pasar pulgadas a centimetros.
+//prototipo de la funcion.
+int pul_cent (int c);
+// 1 centimetro son 0.393701 pulgadas.
+
+int main(){
+	//definimos el tipo float como nuestro tipo.
+	typedef  float fl; 
+	
+	//definimos las variables que vamos a necesitar.
+	fl peso_libras, multiplicador, altura_pulgadas,result,conversion;
+	
+	//las inicializamos.
+	result = 0;
+	peso_libras = 0;
+	multiplicador = 703;
+	altura_pulgadas = 0;
+	
+	//pedimos los datos en pantalla.
+	cout <<"Programa para conocer Indice Masa Corporal \n";
+	cout <<"----------------------------------------------\n";
+    cout <<"Digite su peso en LIBRAS. (puede usar fracciones): \n";
+	cin  >>peso_libras;
+	cout <<"Digite su altura en centimetros: \n";
+	cin  >>altura_pulgadas;
+	conversion = pul_cent(altura_pulgadas);
+	
+	//hacemos la ecuacion, con los datos que nos proporcionan.
+	result = (peso_libras * multiplicador)/(conversion * conversion);
+	cout << "Su (BMI) indice de masa corporal es: \n";
+	cout <<"--------------------------------------\n";
+	cout <<setprecision(4)<<result<<endl;
+	
+	//setprecision() hace que nos de resultados concretos aca le ponemos 
+	// resolucion de 4 digitos contando decimales.
+	
+		/*Los valores del BMI son:
+		
+		Bajo peso: menos de 18.5
+		Normal:  entre 18.5 y 24.9
+		Sobre peso: entre 25 y 29.9
+		Obeso: 30 o mas............
+		*/
+		
+		//condicionales para mostrar su condicion segun la tabla.
+		if (result <=18.5 )
+		{
+			cout<<"Usted tiene Bajo Peso!\n";
+			
+		}
+		if (result > 18.5 && result <24.9)
+		{
+			cout <<"Usted tiene Peso Normal \n";
+						
+		}
+		if (result >25 && result <29.9)
+		{
+			cout <<"Usted Tiene Sobrepeso!\n";
+		}
+		if (result >30)
+		{
+			cout <<"Usted Tiene Obesidad!\n";
+		}
+	return 0;
+}
+
+//funcion para pasar pulgadas a centimetros.
+int pul_cent (int c)
+{
+	typedef float fl;
+	fl r,pulg;
+	pulg = 0.393701;
+	r = (pulg * c);
+	return r;
+		
+}
