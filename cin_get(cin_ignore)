@@ -1,0 +1,45 @@
+#include <iostream>
+// libraria para salida/entrada estandar
+using namespace std; 
+// aca usamos los tipicos cout / cin
+int main(){ // funcion principal
+	
+	
+char c; 
+int numero; 
+cout <<"Ingresa un Numero\n";
+cin>>numero; 
+// digitamos por ejemplo
+// 12
+// el buffer del compilador lee 12\n 
+// porque al momento de dar ENTER ingresamos
+// un espacio en blanco o newline
+cin.ignore(); 
+// si dejamos esto como comentario
+// no pasaremos a pedir la letra 
+// sino que el programa corre 
+// sin solicitar la letra. 
+cout <<"Ingresa una Letra\n";
+c = cin.get();
+cout <<"Gracias!! \n";
+
+/*
+una variante de este codigo usa 
+cin.ignore() para desechar el espacio recibido 
+despues del numero
+
+el argumento para cin.ignore(); podria ser
+cin.ignore(20,'\n');
+con el cual estariamos diciendo que agarre los 
+primeros 20 caracteres hasta encontrar un newline
+osea '\n'
+
+
+*/
+	
+	
+	
+	
+	
+	return 0;
+}// FIN DEL CODIGO
