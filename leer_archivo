@@ -1,0 +1,51 @@
+#include <iostream>
+#include <fstream> // necesaria para crear archivoz
+#include <string.h>// usamos para objetos string
+
+using namespace std;
+
+int main(int argc, char *argv[]) {
+	
+	ifstream Archivo_Lectura; // creamos una instancia 
+	
+	string nombre; // creamos una variable tipo string
+	
+	Archivo_Lectura.open("demofile.txt");
+	// abrimos el archivo llamado "demofile.txt"
+	
+	
+	
+	cout <<"Leeremos Informacion del Archivo\n";
+	//mostramos una informacion en pantalla.
+	
+	
+	Archivo_Lectura>>nombre;
+	// leemos el string del Archivo
+	
+	cout <<nombre <<endl;
+	// lo imprimimos en pantalla.
+	
+	
+	Archivo_Lectura>>nombre;
+	cout <<nombre<<endl;
+	
+	Archivo_Lectura>>nombre;
+	cout <<nombre <<endl;
+	
+	cout <<endl;
+	cout <<endl;
+	
+	
+	// al finalizar cerramos el archivo.
+	Archivo_Lectura.close();
+	
+	// mostramos en pantalla que todo termino con exito.
+	cout <<"Terminado\n";
+	
+	
+	
+	
+	
+	
+	return 0;
+}
