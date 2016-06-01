@@ -1,0 +1,15 @@
+#include <iostream> // libraria estandar
+using namespace std; // usamos para cin/cout 
+int main(){
+
+// ciclo for en este caso nos muestra los numeros 
+// del 1 al 10 
+
+for (int a = 1; a<=10; a++)
+{
+cout <<"Valor de a es: " <<a<<endl;
+}
+
+
+return 0;
+}
