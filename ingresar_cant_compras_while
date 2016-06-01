@@ -1,0 +1,36 @@
+/*
+Con esta opcion de while podemos ir sumando valores en este caso de una "compra" y ver al final cuanto nos sale en total
+la iteracion while terminara de sumar hasta que nosotros le ingresemos un valor = 0 en su apartado de lo contrario
+seguira la suma de nuestras compra. 
+*/
+
+#include <iostream> // librearia estandar
+using namespace std;  // para usos de cout / cin
+
+int main()
+{
+	
+	const int salir = 0; // definimos como saldremos del ciclo while
+	double compra, // variable donde se almacenara nuestra compra
+	       total = 0; // aca se almacenara el total absoluto de la compra
+	
+	cout <<"Ingresa el total de tu primera compra "; // pedimos al usuario que ingrese los datos 
+	cin>>compra; // usa la variable antes descrita para almacenarlos 
+	while (compra != salir)
+	// bucle en el cual iremos sumando las cantidades , hasta que se ingrese 0.
+	{
+		total += compra; // aca se van sumando todos los valores ingresados
+		cout <<endl; // salto de linea
+		cout <<"Ingrese el monto de la siguiente compra, "; // pedimos que ingrese otra valor de compra
+		cout <<" o ingrese," <<salir<<" para salir "; // le decimos que precion 0 para salir 
+		cin>>compra;// sino que siga ingresando valores
+		
+	}
+	cout <<endl<<"Tu total es $"<<total<<endl; 
+	// cuando se salga del loop while (cuando ingrese '0') le mostrara el total completo.
+	
+	return 0; 
+}// FIN DEL PROGRAMA.
+/*************
+Rafaelnfs
+***********/
