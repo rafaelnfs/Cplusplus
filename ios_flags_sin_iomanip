@@ -1,0 +1,41 @@
+/*
+
+Esta es otra forma de utilizar fixed
+y tambien showpoint y la funcion setprecision()
+estos metodos vienen internos en la libraria
+estandar, si usamos using namespace std
+podemos usar cout.setf(comando_flags);
+sino tendrias que poner std::cout.setf(comandos);
+al igual que para las banderas dentro del setf()
+sino seria como:
+std::cout.setf(std::ios::fixed);
+y tambin podemos agregar mas opciones con solo
+poner el operador OR ( | ) dentro de la funcion
+como por ejemplo:
+std::cout.setf(std::ios::fixed | std::ios::showpoint);
+
+
+*/
+
+#include<iostream>
+#define c 4.0
+//using namespace std; 
+// si quitamos el namespace std
+// debemos utilizar std:: dentro de cada funcion que utilize las 
+// opciones de salida o entrada "cout" o con "cin"
+int main(){
+	
+	
+	std::cout.setf(std::ios::fixed);
+	std::cout.setf(std::ios::showpoint);
+	std::cout.precision(2);
+	float a =  2.0;
+	float b = 3.0;
+	std::cout <<"Float a es: "<<a<<std::endl;
+	std::cout <<"Float b es: "<<b<<std::endl;
+	std::cout <<"El numero float en define es: "<<c<<std::endl;
+	
+	
+	
+	return 0; 
+}// FIN DE PROGRAMA.
