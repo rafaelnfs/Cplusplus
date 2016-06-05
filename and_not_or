@@ -1,0 +1,43 @@
+/*
+&& con este operador ambas condiciones tienen que ser ciertas AND
+|| con este operador almenos una debe de ser cierta OR
+ ! con este operador comprueba que no se cumpla la operacion a la que precede NOT
+ (el operador NOT cambia una condicion de 0 a 1 si es 0 la cambia a 1)
+ 
+ 
+ Lo veremos en el Siguiente ejemplo
+
+
+*/
+
+#include <iostream>
+using namespace std; 
+
+
+const int x = 50;
+// declaramos una variable tipo constante ya que no cambiaremos su valor
+// a lo largo del programa
+
+
+int main(){
+
+if ( x >= 10 && x<=50)
+{
+cout <<"Nuestra Variable esta en el rando de 10 a 50"<<endl;
+}
+
+if ( x >=10 || x <= 20)
+{
+cout <<"Nuestra variable cumple almenos una condicion" <<endl;
+}
+
+if (x >= 10 && !(x <= 20))
+{
+cout <<"Las dos condiciones se cumplen pero una es negada con el operador NOT"<<endl;
+}
+
+
+
+
+return 0;
+}// FIN DEL PROGRAMA
