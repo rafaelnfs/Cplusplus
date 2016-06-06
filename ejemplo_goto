@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std; 
+int main(){
+	
+	
+	unsigned short int x = 1;
+	// creamos una variable tipo int
+	// sin short sin signo
+	loop1:// creamos una etiqueta
+	 
+	    cout <<"El valor de x es: "<<x<<endl;
+	    // imprimimos en pantalla
+		
+		x++; // aumentamos x +1
+		if(x<=10)// comprobamos que 
+		// x sea menor a 100
+		
+		goto loop1;
+		// vamos al comienzo donde pusimos 
+		// nuestra etiqueta
+		
+	
+	
+	
+	return 0;
+}// fin del programa
