@@ -1,0 +1,67 @@
+/*
+ordenamiento de burbuja
+comunmente ese tipo de ordenamiento no es muy usado ya que segun 
+algunos libros es un poco engorroso e inadecuado por su complejidad
+y por algunos factores que tenemos que ver a continuacion pero al
+igual que muchas formas en c++ es necesario conocerlas y tenerlas 
+en cuenta para alguna implementacion que se nos presente.
+ espero les ayude en su formacion!! :) 
+
+*/
+
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main(){
+	
+	int numeros[10]; // arreglo con 10 valores
+	int a,b,t; // variables usadas
+	int tamano; // tamano de la variable
+	
+	tamano =  10; //numero de elementos
+	
+	// daremos un arreglo de numeros 
+	// aleatorios
+	
+	for(t = 0; t<tamano; t++)
+	numeros[t] = rand();
+	
+	// mostramos el arreglo original
+	cout <<"Arreglo Original is: ";
+	for(t = 0; t<tamano; t++)
+	cout <<numeros[t]<<' '; 
+	cout <<'\n';
+	
+	
+	// aca vemos el efecto burbuja
+	for(a=1; a<tamano; a++)
+	for(b=tamano-1; b>=a; b--)
+	{
+	if(numeros[b-1] > numeros[b])
+	{// intercambiamos los elementos
+		t = numeros[b-1];
+		numeros[b-1] = numeros[b];
+		numeros[b] = t; 
+		
+	 }
+}
+ 	
+// mostramos el array ya acortado
+
+cout <<"Arreglo Acortado is: ";
+for(t = 0; t<tamano; t++)
+cout <<numeros[t]<<' ';
+
+		
+	return 0;
+}
+/*
+el metodo burbuja es bueno para array/arreglos cortos que no
+tengan muchos elementos, pero cuando ese se vuelve mas complejo
+y con muchos mas elementos, se vuelve demaciado complicado
+para eso se utilizan metodos qsort() pero las veremos mas 
+adelante en ejemplos mas adelante. 
+powered by rafaelnfs 
+
+
+*/
