@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+ 
+const int MAXIMO = 5; // constante tamaño del array
+int Bmax(int [MAXIMO]); // prototipo de funcion
+
+
+
+int main()
+{
+	int numeros[MAXIMO] = {2,18,1,27,16}; // array de elementos tipo int
+	
+	// mostramos en pantalla el valor maximo sacado por la funcion
+	cout<<"El Maximo Valor es: "<<Bmax(numeros)<<endl;
+	
+	
+	
+	
+	return 0;
+}
+
+// declaramos la funcion
+int Bmax(int vals[MAXIMO]) // parametros de funcion
+{
+	
+	int i,max = vals[0]; // declaramos las variables que usaremos dentro de la funcion
+	for(i=1; i<MAXIMO; i++) // ciclo for para iterar dentro del array
+	if(max <vals[i]) // condicional que nos muestra solo los numeros mayores 
+	max = vals[i]; // asignamos a max el valor maximo segun nos diga el condicinal if
+
+// valor de retorno tipo int el cual es max	
+	return max; 
+	
+	
+	
+}
