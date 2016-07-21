@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std; 
+
+// definimos una funcion suma
+// sencilla que solo recibira un parametro 
+// y del parametro que reciba se le sumara
+// 20 a dicha cantidad
+
+int suma(int a){
+	return (a+20);
+	
+}
+
+// crearemos otra funcion tipo resta
+
+int resta(int b){
+	return (b-1);
+}
+
+// crearemos otra funcion que no devuleve nada
+
+void msj(void){
+	cout<<"Solo soy una Funcion vacia.\n";
+}
+
+int main(){
+	
+	// variable para alojar lo que nos de la 
+	// funcion 
+	int m; 
+	
+	// creamos una puntero a una funcion
+	// en este caso la funcion suma. 
+	// podemos hacerlo en la misma sentencia
+	// o demos hacerlo luego asi como aca
+	
+	int (*funcion)(int) = suma; // llamamos a funcion suma con puntero
+	int (*f1)(int) = resta; // llamamos a la funcion resta con puntero
+	
+	void (*f2)(void) = msj; // asignamos puntero a la funcion msj.
+	
+	
+	// alojamos en m el resultado que nos devuelva la funcion 
+	// a la que llamamos 
+	m =  funcion(4);
+	
+	// llamamos a la funcion resta y le asignanmos lo que nos de a la variable s 
+	int s = f1(5);  
+	cout<<"Lo que guarda la variable m\t "<<m<<endl;
+	
+	cout<<"Ahora mostraremos lo que tiene s: "<<s<<endl; 
+
+   // bueno ahora para llamar a la funcion apuntara por puntero 
+	// solo es necesario llamar al puntero en este caso f2(); 	
+	f2();
+	 
+	 
+	 
+	
+	return 0; 
+	
+}
