@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std; 
+
+
+int suma (int a,int b){
+	return (a+b);
+}
+
+int resta(int a,int b){
+	return (a-b);
+}
+
+int puntero(int a, int b,int (*funcion)(int,int)){
+	
+	int g;
+	g = (*funcion)(a,b);
+	return (g);
+}
+
+
+int main(){
+	
+	
+	int m,n;
+	
+	int (*menos)(int,int) = resta;
+	
+	m = puntero (7,5, suma);
+	n = puntero (20,m,menos);
+	cout<<"puntero n: "<<n<<endl;
+	cout<<"puntero m: "<<m<<endl;
+	
+	
+	
+	
+	return 0; 
+}
