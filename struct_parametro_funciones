@@ -1,0 +1,50 @@
+/*
+Pasando struct como parametro de 
+una funcion , la cual toma los elementos
+por valor asi que nada que sea pasado a 
+la funcion sera afectado por la funcion
+
+*/
+
+#include <iostream>
+using namespace std; 
+
+struct sample{
+	int a;
+	char c; 
+	
+}; 
+
+// prototipo de la funcion
+// que toma un struct como parametro
+void f1(sample parm); 
+
+int main(){
+	
+	struct sample arg; // creamos una instancia del struct
+	
+	// asignamos valores a los miembros del
+	// struct
+	
+	arg.a = 100;
+	arg.c = 'X'; 
+	
+	
+	// una vez llenamos unos valores
+	// del struct llamamos  a la funcion
+	// con el struct como parametro
+	// ambos miembros del struct son llamados
+	
+	f1(arg);
+	
+	
+	return 0;
+}
+
+// funcion sencilla que solo nos muestra
+// los datos dentro del struct
+// por tal motivo solo es tipo void
+void f1(sample parm)
+{
+	cout<<parm.a<<" "<<parm.c<<endl;
+}
