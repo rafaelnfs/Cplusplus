@@ -1,0 +1,44 @@
+/*
+Asignacion de struct 
+veremos como podemos asignar struct 
+siempre y cuando sean del mismo tipo
+*/
+
+#include <iostream>
+using namespace std; 
+
+// struct al cual asignaremos 
+
+struct stype{
+	int a,b;
+};
+
+
+int main(){
+stype svar1,svar2; // creamos las instancias 
+// de la struct en este casi svar1, svar2
+
+// les asignamos valores a las struct 
+// de manera normal
+
+svar1.a = svar1.b = 10;
+svar2.a = svar2.b = 20; 	
+
+cout<<"Struct antes de la asignacion.\n";
+cout<<"svar1: "<<svar1.a<<' '<<svar1.b;
+cout<<'\n';
+cout<<"svar2: "<<svar2.a<<' '<<svar2.b;
+cout<<"\n\n";
+
+svar2 = svar1; // asignamos los valores
+// como una variable normal.
+
+cout<<"Struct despues de la asignacion.\n";
+cout<<"svar1: "<<svar1.a<<' '<<svar1.b;
+cout<<'\n';
+cout<<"svar2: "<<svar2.a<<' '<<svar2.b;
+cout<<"\n\n";
+
+	
+	return 0;
+}
