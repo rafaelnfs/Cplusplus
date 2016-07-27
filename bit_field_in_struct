@@ -1,0 +1,51 @@
+/*
+Veremos como utilizar el bit_field en las structuras
+en este caso nos dice cuantos bit puede utilizar una variable 
+para que esta no se sobrepase. 
+como en el ejemplo siguiente veremos un struct con numero de 3 bit 
+osea solo puede representar desde 000 hasta el 111 que en ese caso
+serial el numero 7
+
+000 - 0
+001 - 1
+010 - 2
+011 - 3
+100 - 4
+101 - 5
+110 - 6
+111 - 7
+numeros en binario en este caso con 3 bit solo se puede hacer esto
+*************************************************/
+#include <iostream>
+
+using namespace std;
+
+struct bit_field{
+	// tres bit de tipo unsigned int
+	// valores posibles de 0..a .. 7
+	
+	unsigned int b : 3;
+	
+};
+
+int main(){
+	
+	// si le ponemos 7 se sobrecarga
+	// sino si le ponemos un numero inferior
+	// solo aumentara en uno. 
+	
+	bit_field s = {7}; 
+	++s.b; 
+	// aumentamos la variable s.b 
+	// ya que ya de antemano la habiamos habilitado
+	// para que solo tuviera 3 bit en ella.
+	// sufrio overflow. 
+	
+	
+	// la mostramos por pantalla
+	cout<<s.b<<endl;
+	
+	
+	
+	return 0;
+}
