@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+struct ejemplo{
+	int a;
+	int b;
+	ejemplo *ptr;
+}casa;
+
+int main(){
+	
+	ejemplo *ptr = &casa;
+	ptr->a = 23;
+	cout<<ptr->a<<endl;
+	
+	
+	
+
+  return 0;
+}
