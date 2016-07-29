@@ -1,0 +1,35 @@
+/*
+Uso de range_for dentro de un loop de tipo 
+for en el cual es posible poner elementos 
+de un array dentro de un ciclo for sin 
+poner muchos elementos, cabe recalcar que 
+para usar esta opcion su compilador tiene
+que estar en C++11 para que sea posible
+utilizar el ciclo for con array dentro de 
+el.
+
+
+*/
+
+
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	// creamos un array
+	int numeros[] = {2,4,5};
+	
+	// solo en C++11 podemos hacer este tipo
+	// de formato con C++11
+	
+	for(int val : numeros)
+	cout<<val<<' ';
+	
+	// salida:
+	// 2 4 5
+	
+	
+	return 0;
+}
