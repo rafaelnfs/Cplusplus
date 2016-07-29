@@ -1,0 +1,81 @@
+/*
+Aca veremos un breve ejemplo de como utilizar las union 
+dentro de nuestros programas, como vimos anteriormente 
+las uniones son eso uniones de distintos tipos de dato
+pero usando una misma direccion de memoria, por tal 
+motivo debemos de tener mucho cuidado al momento de 
+utilizarlos ya que si tenemos 2 elemtos o mas no 
+podemos utilizar esos dos elementos al mismo tiempo
+ya que como dijimos usan la misma direccion de memoria
+
+Pasamos al ejemplo de como usar una union en el caso 
+como vimos anteriormente para pasar numeros a a binario 
+en este caso haremos que lo que almacenamos en un short 
+int quepa dentro de un char[2]
+
+Pasamos al ejemplo
+*/
+
+#include <iostream>
+using namespace std;
+
+// prototipo de la funcion
+void disp_binary(unsigned u);
+
+
+union swap_bytes{
+	short int num;
+	char ch[2];
+};
+
+int main(){
+	
+	
+	// creamos una instancia de la union
+	swap_bytes sb;
+	
+	// creamos otra variable
+	char temp;
+	
+	// le asignamos un valor a sb.num 
+	sb.num = 15; // numero 15 binario 0000 0000 0000 1111
+	
+	// mostramos en pantalla el resultado
+	// anterior y luego es posterior
+	cout<<"Bytes Originales: ";
+	
+	//llamamos a la funcion
+	disp_binary(sb.ch[1]);
+	cout<<" ";
+	disp_binary(sb.ch[0]);
+	cout<<"\n\n";
+	
+	
+	//intercambia los bytes
+	temp = sb.ch[0];
+	sb.ch[0] = sb.ch[1];
+	sb.ch[1] = temp;
+	
+	
+	// mostramos de nuevo pero esta vez
+	// los datos intercambiados
+	
+	cout<<"Bytes Cambiados: ";
+	disp_binary(sb.ch[1]);
+	cout<<" ";
+	disp_binary(sb.ch[0]);
+	cout<<"\n\n";
+	
+	
+	return 0;
+}
+
+// Muesta los bits dentro de un byte (binario)
+void disp_binary(unsigned u){
+	
+	register int t;
+	for(t =128; t>0; t=t/2)
+	if(u & t) cout<<"1 ";
+	else cout<<"0 ";
+}
+
