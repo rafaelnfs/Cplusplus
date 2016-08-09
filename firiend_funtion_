@@ -1,0 +1,74 @@
+#include <iostream>
+using namespace std; 
+
+
+class myclass{
+	
+	int p;
+	public:
+		// constructor
+		myclass(){p=0;
+		cout<<"Inicializando el Constructor.\n";}
+		
+		// destructor
+      ~myclass(){cout<<"Ejecutando Destructor.\n";};
+		
+		// funcines miembro
+		
+		// funciones Seter
+		void set_value(int i){ p = i;}
+		
+		// funcion geter
+		void show_value(){cout<<p<<'\n';}
+		
+		// funcion Friend con acceso a datos privates de la clase.
+		friend void show_mensaje();
+};
+
+
+// funcion friend que tiene acceso a datos miembros
+// que son de tipo private. 
+
+// si  nos fijamos la funcion no pertenece a la class myclass
+// pero aun asi tiene acceso a datos miembros privados. 
+// todo gracias a la palabra reservada friend.
+void show_mensaje(myclass x){
+	cout<<"Llamada de Funcion del tipo Friend.\n";
+   x.show_value();
+	
+}
+
+
+//funcion principal.
+int main(){
+	
+	// declaramos un objeto
+	myclass ob;
+	
+	// declaramos un puntero tipo class
+	myclass *p;
+	p=&ob; // le asignamos la direccion de la class que necesitamos manipular
+	
+	// les damos valores a las clases. 
+	ob.set_value(10);
+	ob.show_value();
+	
+	
+	// creamos otro objeto.
+	myclass oc;
+	oc.set_value(20);
+	
+	
+	// usamos el puntero que creamos anteriormente
+	// todo funciona correctamente. 
+	p->show_value();
+	
+	// funcione friend en ejecucion
+	show_mensaje(oc);
+	
+	
+	
+	
+	return 0;
+}
+// fin del programa. 
